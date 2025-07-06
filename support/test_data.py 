@@ -1,0 +1,36 @@
+import random
+import string
+from typing import Dict, List, Any
+from decimal import Decimal
+
+class TestDataGenerator:
+    """Generate test data for various scenarios"""
+    
+    @staticmethod
+    def generate_random_string(length: int = 10) -> str:
+        """Generate random string"""
+        return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+    
+    @staticmethod
+    def generate_customer_name() -> str:
+        """Generate random customer name"""
+        first_names = ['John', 'Jane', 'Bob', 'Alice', 'Charlie', 'Diana']
+        last_names = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia']
+        return f"{random.choice(first_names)} {random.choice(last_names)}"
+    
+    @staticmethod
+    def generate_item_name() -> str:
+        """Generate random item name"""
+        adjectives = ['Premium', 'Standard', 'Deluxe', 'Basic', 'Professional']
+        items = ['Laptop', 'Desktop', 'Monitor', 'Keyboard', 'Mouse', 'Printer']
+        return f"{random.choice(adjectives)} {random.choice(items)}"
+    
+    @staticmethod
+    def generate_price(min_price: float = 0.01, max_price: float = 9999.99) -> float:
+        """Generate random price"""
+        return round(random.uniform(min_price, max_price), 2)
+    
+    @staticmethod
+    def generate_quantity(min_qty: int = 1, max_qty: int = 100) -> int:
+        """Generate random quantity"""
+        return random.randint(min_qty, max_qty)

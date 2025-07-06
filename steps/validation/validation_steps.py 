@@ -1,0 +1,33 @@
+from behave import when, then
+import requests
+import logging
+
+logger = logging.getLogger(__name__)
+
+@when('I attempt to create a quote with item "{item_name}" quantity {quantity:f} and price {price:f}')
+def attempt_create_quote_decimal_quantity(context, item_name, quantity, price):
+    item_response = requests.post(
+        f"{context.base_url}/items",
+        json={'name': item_name, 'price': price},
+        headers=context.headers
+    )
+    
+    if item_response.status_code == 201:
+        item_id = item_response.json()['id']
+    else:
+        item_id = 1
+    
+    payload = {
+        'customer_id': context.customer['id'],
+        'items': [{
+            'item_id': item_id,
+            'quantity': quantity,
+            'price': price
+        }]
+    }
+    
+    context.response = requests.post(
+        f"{context.base_url}/quotes",
+        json=payload,
+        headers=context.headers
+    )
