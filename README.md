@@ -27,27 +27,27 @@ Automated test suite for Quote Creation API using Python Behave BDD framework. T
 
 ### 1. Clone and Setup
 
-# Clone repository
+#### Clone repository
 git clone https://github.com/YOUR_USERNAME/eurofins-quote-creation-tests.git
 cd eurofins-quote-creation-tests
 
-# Create virtual environment
+#### Create virtual environment
 python3 -m venv venv
 
-# Activate virtual environment
-# On macOS/Linux:
+#### Activate virtual environment
+#### On macOS/Linux:
 source venv/bin/activate
-# On Windows:
+#### On Windows:
 venv\Scripts\activate
 
-# Install dependencies
-pip install -r requirements.txt```
+#### Install dependencies
+pip install -r requirements.txt
 
 ### 2. Configure Environment
-# Copy environment template
+#### Copy environment template
 cp .env.example .env
 
-# Edit .env with your API settings
+#### Edit .env with your API settings
 nano .env
 
 Example .env configuration:
@@ -58,38 +58,17 @@ TEST_PASSWORD=password123
 
 
 ### 3. Run Tests
-# Run all tests
+#### Run all tests
 behave
 
-# Run specific feature
+#### Run specific feature
 behave features/quote_creation_happy.feature
 
-# Run by tag
+#### Run by tag
 behave --tags=@performance
 behave --tags=-@performance  # Exclude performance tests
 
-# Run with HTML report
+#### Run with HTML report
 behave -f html -o reports/test-report.html
-
-### 4. Project Structure
-eurofins-quote-creation-tests/
-├── 📂 features/                    # Feature files (test scenarios)
-│   ├── 📄 quote_creation_happy.feature
-│   ├── 📄 quote_creation_edge.feature
-│   ├── 📄 quote_creation_negative.feature
-│   └── 📄 quote_creation_performance.feature
-├── 📂 steps/                       # Step definitions
-│   ├── 📂 common/                  # Common steps (auth, api)
-│   ├── 📂 customers/               # Customer-related steps
-│   ├── 📂 item/                    # Item-related steps
-│   ├── 📂 quote/                   # Quote-specific steps
-│   └── 📂 performance/             # Performance test steps
-├── 📂 support/                     # Helper utilities
-├── 📂 config/                      # Configuration
-├── 📂 reports/                     # Test reports
-├── 📄 environment.py               # Behave hooks
-├── 📄 behave.ini                   # Behave configuration
-├── 📄 requirements.txt             # Python dependencies
-└── 📄 README.md                    # This file
 
 
