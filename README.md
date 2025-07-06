@@ -101,4 +101,4 @@ Feature: Quote Creation - Happy Cases
 
 1 feature passed, 0 failed, 0 skipped
 10 scenarios passed, 0 failed, 0 skipped
-45 steps passed, 0 failed, 0 skipped, 0 undefined
+45 steps passed, 0 failed, 0 skipped, 0 undefined# eurofins-quote-creation-tests
