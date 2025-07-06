@@ -1,7 +1,7 @@
 Feature: Quote Creation - Happy Cases
               As a sales representative
               I want to create quotes with various configurations
-  So that I can provide accurate pricing to customers
+              So that I can provide accurate pricing to customers
 
         Background:
             Given I am authenticated as a sales user
