@@ -74,7 +74,9 @@ TEST_PASSWORD=password123
 
 ### 3. Run Tests
 #### Run all tests
+```bash
 behave
+```
 
 #### Run specific feature
 ```bash
